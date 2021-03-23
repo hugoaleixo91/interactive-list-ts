@@ -1,0 +1,35 @@
+.ListItem {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  height: 40px;
+  border: 1px solid transparent;
+}
+
+.ListItem:nth-child(odd) {
+  background-color: #f4f6f8;
+}
+
+.ListItem:hover {
+  background-color: #aedffc;
+}
+
+.ListItem-btn {
+  opacity: 0;
+}
+
+.ListItem-btn svg {
+  fill: #000;
+}
+
+.ListItem:hover .ListItem-btn {
+  opacity: 1;
+}
+
+.ListItem-value {
+  flex: 1;
+}
+
+.button:hover {
+  background-color: #e3effe;
+}

@@ -1,0 +1,33 @@
+.InputContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9dadd;
+}
+
+.InputContainer.invalid {
+  border-color: #ff0000;
+}
+
+.InputContainer-input {
+  flex: 1;
+  height: 40px;
+  padding-left: 20px;
+  border: 0;
+  outline: none;
+}
+
+.InputContainer-btn-submit svg {
+  fill: #616161;
+}
+
+.InputContainer.invalid svg {
+  fill: #ff0000;
+}
+
+.InputContainer-btn-submit:hover {
+  background-color: #d9dadb;
+}
+
+.InputContainer-btn-submit:hover svg {
+  fill: #000;
+}
