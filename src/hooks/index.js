@@ -18,33 +18,18 @@ export const usePersistedList = (listKey, initialList = []) => {
     // Server validation
     return new Promise(resolve => {
       setTimeout(() => {
-        const minLength5 = new RegExp("^([a-z0-9]{5,})$");
-
-        console.log({
-          sameValue:
-            list.findIndex(
-              item =>
-                item.id !== listItem?.id &&
-                item.value.toUpperCase() === finalValue.toUpperCase()
-            ) >= 0,
-          minLength: !minLength5.test(finalValue),
-          finalValue
-        });
-
-        // Same value comparison
-        if (
+        const regex = /^[a-zA-Z0-9!@#$%/&+=.:_-]{5,}$/g;
+        const sameValueCheck =
           list.findIndex(
             item =>
               item.id !== listItem?.id &&
               item.value.toUpperCase() === finalValue.toUpperCase()
-          ) >= 0
-          //   ||
-          //   !minLength5.test(finalValue)
-        ) {
+          ) >= 0;
+
+        if (sameValueCheck || !regex.test(finalValue)) {
           return resolve(false);
         }
 
-        // TODO: add regex validations ?
         return resolve(true);
       }, 2000);
     });
